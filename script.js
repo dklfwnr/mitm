@@ -74,7 +74,7 @@ const notes = {}; // notas guardadas por ramo: { id: { pres: n, exam: n, final: 
 
 const palette = [
   "#c5b2f2", "#bda4f0", "#b496ee", "#ac87ec", "#a37ae9",
-  "#9b6ce7", "#925ee5", "#8a50e2", "#8143e0", "#7837dd"
+  "#9b6ce7", "#925ee5", "#8a50e5", "#8a50e2", "#8143e0"
 ];
 
 /* ---------- Renderizado ---------- */
@@ -156,6 +156,20 @@ function onCourseDoubleClick(e) {
 }
 
 /* ---------- Modal notas por ramo ---------- */
+const gradeModalHTML = `
+<div id="gradeModal" class="modal">
+  <div class="modal-content">
+    <span id="closeGrade" class="close">&times;</span>
+    <h3 id="gradeTitle"></h3>
+    <label>Nota presentación (70%): <input type="number" id="inputPres" min="1" max="7" step="0.1"></label><br><br>
+    <label>Nota examen (30%): <input type="number" id="inputExam" min="1" max="7" step="0.1"></label><br><br>
+    <div id="gradeResult" style="font-weight:bold;"></div><br>
+    <button id="saveGrade">Guardar Nota</button>
+  </div>
+</div>
+`;
+document.body.insertAdjacentHTML('beforeend', gradeModalHTML);
+
 const gradeModal = document.getElementById("gradeModal");
 const gradeTitle = document.getElementById("gradeTitle");
 const inputPres = document.getElementById("inputPres");
@@ -246,25 +260,9 @@ function saveGrades() {
 }
 
 /* ---------- Bloc de notas general ---------- */
-const notesModal = document.getElementById("notesModal");
-const openNotesBtn = document.getElementById("openNotes");
-const closeNotesBtn = document.getElementById("closeNotes");
-const notesArea = document.getElementById("notesArea");
-const saveNotesBtn = document.getElementById("saveNotes");
-
-function setupGeneralNotes() {
-  openNotesBtn.onclick = () => {
-    notesModal.style.display = "flex";
-    // cargar notas guardadas en localStorage
-    notesArea.value = localStorage.getItem("generalNotes") || "";
-  };
-  closeNotesBtn.onclick = () => {
-    notesModal.style.display = "none";
-  };
-  saveNotesBtn.onclick = () => {
-    localStorage.setItem("generalNotes", notesArea.value);
-    alert("Notas guardadas");
-    notesModal.style.display = "none";
-  };
-  window.onclick = (e) => {
-    if (e.target === notes
+const notesModalHTML = `
+<div id="notesModal" class="modal">
+  <div class="modal-content">
+    <span id="closeNotes" class="close">&times;</span>
+    <h3>Bloc de Notas General</h3>
+    <
