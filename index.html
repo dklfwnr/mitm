@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Malla Interactiva – Tecnología Médica</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <h1>Malla Interactiva – Tecnología Médica</h1>
+
+  <!-- Botón flotante para abrir bloc de notas -->
+  <button id="openNotes" class="notes-btn">📝 Notas</button>
+
+  <!-- Contenedor dinámico de semestres -->
+  <div id="mesh"></div>
+
+  <!-- Modal bloc de notas -->
+  <div id="notesModal" class="modal">
+    <div class="modal-content">
+      <span id="closeNotes" class="close">&times;</span>
+      <h2>Bloc de notas</h2>
+      <textarea id="notesArea" placeholder="Escribe tus notas aquí…"></textarea>
+      <button id="saveNotes">Guardar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
