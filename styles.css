@@ -1,0 +1,90 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f4ff;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 1rem;
+  color: #7b1fa2;
+}
+
+#mesh {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 1rem;
+  flex-direction: row;
+  scroll-snap-type: x mandatory;
+}
+
+.semester {
+  min-width: 300px;
+  flex-shrink: 0;
+  background: #fff0ff;
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 0 8px rgba(123, 31, 162, 0.2);
+  scroll-snap-align: start;
+}
+
+.semester h2 {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #6a1b9a;
+  margin-bottom: 1rem;
+}
+
+.course {
+  display: block;
+  margin: 0.5rem 0;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  background-color: #f3e5f5;
+  border: 2px solid var(--border-color, #ce93d8);
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  cursor: pointer;
+  color: #4a148c;
+}
+
+.course:hover {
+  background-color: #e1bee7;
+}
+
+.course.completed {
+  text-decoration: line-through;
+  background-color: #d1c4e9;
+  color: #555;
+}
+
+.course.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  background-color: #fce4ec;
+}
+
+.course.unlocked {
+  border: 2px dashed #ba68c8;
+  background-color: #f8e1fa;
+}
+
+.badge {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  background-color: #ab47bc;
+  color: white;
+  font-size: 0.75rem;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
